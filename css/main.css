@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.gallery {
+    width: 1980px;
+    height: auto;
+    background-color: #ffffff;
+}
+
+.container h1 {
+    display: block;
+    width: 210px;
+    margin: 0px auto;
+    padding-top: 93px;
+    padding-bottom: 92px;
+}
+
+.gallery-item {
+    position: relative;
+    width: 271px;
+    height: 481px;
+    display: inline-block;
+    margin-left: 0px;
+    margin-right: 29px;
+    margin-bottom: 50px;
+    vertical-align: top;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    padding-left: 0px;
+    padding-right: 0px;
+    background-color: #f7f7f7;
+}
+
+.gallery-item:nth-child(1) {
+    margin-left: 374px;
+}
+.gallery-item:nth-child(4n-3) {
+    margin-left: 374px;
+
+}
+.gallery-item:nth-child(4n+4) {
+    margin-right: 400px;
+
+}
+
+.gallery-picture {
+    width: 271px;
+    height: 376px;
+    margin-bottom: 20px;
+    float: left;
+}
+
+
+.gallery-text {
+    /* Style for "Assasin’s" */
+    color: #000000;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 23.94px;
+    text-transform: uppercase;
+    /* Text style for "Assasin’s" */
+    letter-spacing: 0.14px;
+    /* Text style for ": Rogue" */
+}
+
+.long-text {
+    line-height: 20px;
+}
+
+.gallery-open-button {
+    width: 130px;
+    height: 30px;
+    background-color: #f44336;
+    margin: 0px auto;
+    position: absolute;
+    bottom: 13px;
+    left: 70px;
+}
+
+.gallery-open-button a {
+    display: block;
+    margin-top: 3px;
+    /* Style for "Buy" */
+    color: #ffffff;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    /* Text style for "B, uy" */
+    letter-spacing: 0.14px;
+}
+
+.game-version {
+    text-transform: lowercase;
+
+}
+
+.container {
+    margin: 0 auto;
+}
