@@ -44,6 +44,14 @@
 
         </div>
     </div>
+    <div class="add_foto">
+        <form action="" method="post" enctype="multipart/form-data">
+        <span>Добавить фото:</span>
+            <input type="file" name="userphoto">
+            <button type="submit" name="send">Загрузить</button><br>
+            <span><?=$message?> </span>
+        </form>
+    </div>
 </body>
 
 </html>
