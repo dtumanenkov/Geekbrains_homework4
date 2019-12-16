@@ -34,22 +34,22 @@ function translit_of_russian_word_with_no_spaces($string) { //Транслите
     return str_replace(' ','_',strtr(mb_strtolower(trim($string)), $array_of_letter));
 }
 
-function changeImage($h,$w,$src,$newSrc,$type){
+function changeImage($h,$w,$src,$newsrc,$type){
     $newimg=imagecreatetruecolor($h,$w);
     switch ($type){
         case 'jpeg':
             $img=imagecreatefromjpeg($src);
-            imagecopyresampled($newimg,$img,0,0,0,0,$h,$w,imagesx($img),imagey($img));
+            imagecopyresampled($newimg,$img,0,0,0,0,$h,$w,imagesx($img),imagesy($img));
             imagejpeg($newimg,$newsrc);
             break;
         case 'png':
             $img=imagecreatefrompng($src);
-            imagecopyresampled($newimg,$img,0,0,0,0,$h,$w,imagesx($img),imagey($img));
+            imagecopyresampled($newimg,$img,0,0,0,0,$h,$w,imagesx($img),imagesy($img));
             imagepng($newimg,$newsrc);
             break;
         case 'gif':
             $img=imagecreatefromgif($src);
-            imagecopyresampled($newimg,$img,0,0,0,0,$h,$w,imagesx($img),imagey($img));
+            imagecopyresampled($newimg,$img,0,0,0,0,$h,$w,imagesx($img),imagesy($img));
             imagegif($newimg,$newsrc);
             break;
     }
@@ -64,12 +64,12 @@ if (isset($_POST['send'])){
     elseif(
         $_FILES['userfile']['type']=='image/jpeg'||
         $_FILES['userfile']['type']=='image/png'||
-        $_FILES['userfile']['type']=='image/gif'
-    ){
-        if (copy($_FILES['userfile']['tmp_name'], PHOTO.translit_of_russian_word_with_no_spaces($_FILES['userfile']['name']))){
-            $path=PHOTO_SMALL.translit_of_russian_word_with_no_spaces($_FILES['userfile']['name']);
+        $_FILES['userfile']['type']=='image/gif')
+        {
+        if (copy($_FILES['userfile']['tmp_name'], $dir_with_big_pictures."/".translit_of_russian_word_with_no_spaces($_FILES['userfile']['name']))){
+            $path=$dir_with_small_pictures."/".translit_of_russian_word_with_no_spaces($_FILES['userfile']['name']);
             $type=explode('/',$_FILES['userfile']['type'])[1];
-            changeImage(150,150,$_FILES['userfile']['tmp_name'],$path,$type);
+            changeImage(376,271,$_FILES['userfile']['tmp_name'],$path,$type);
         }
         else{$message='Ошибка загрузки!';}
     }
@@ -78,5 +78,5 @@ if (isset($_POST['send'])){
     }
 
     }
-//$images=array_slice(scandir(PHOTO_SMALL),2);
+$files_small_pictures=array_slice(scandir($dir_with_small_pictures),2);
 ?>
