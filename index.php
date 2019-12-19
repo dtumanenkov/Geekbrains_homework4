@@ -34,6 +34,21 @@ include_once('gallery.php');
      <? }?>
 
         </div>
+        <!--Работа с БД  -->
+        <div class="gallery">
+            <!-- Стандартный блок картинки-->
+            <?php
+
+         for($i=0;$i<count($files_small_pictures);$i++){ ?>
+        <div class="gallery-item">
+            <a class="gallery-picture" rel="gallery" href="image.php?photo=<?=$files_big_pictures[$i]?>" target="_blank"><img width="271" height="376" src='<?=$dir_with_small_pictures."/".$files_small_pictures[$i]?>'></a>
+            <span class="gallery-text">Имя файла:<span class="game-version"><?=$files_big_pictures[$i]?></span></span>
+
+        </div>
+     <? }?>
+
+        </div>
+
     </div>
     <div class="add_foto">
         <form action="" method="post" enctype="multipart/form-data">
