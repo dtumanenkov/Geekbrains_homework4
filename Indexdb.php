@@ -1,7 +1,6 @@
-<?php
-include_once('gallery.php');
+<!--Работа с БД  -->
 
-?>
+
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -20,20 +19,14 @@ include_once('gallery.php');
 
 <body>
     <div class="container">
-        <h1>Our Gallery</h1>
+        <h1>Работа с базой данных</h1>
         <div class="gallery">
             <!-- Стандартный блок картинки-->
             <?php
-
-         for($i=0;$i<count($files_small_pictures);$i++){ ?>
-        <div class="gallery-item">
-            <a class="gallery-picture" rel="gallery" href="image.php?photo=<?=$files_big_pictures[$i]?>" target="_blank"><img width="271" height="376" src='<?=$dir_with_small_pictures."/".$files_small_pictures[$i]?>'></a>
-            <span class="gallery-text">Имя файла:<span class="game-version"><?=$files_big_pictures[$i]?></span></span>
-
-        </div>
-     <? }?>
-
-        </div>
+            $sqltable="pictures";
+            include 'showimage.php';
+            ?>
+         </div>
 
 
 
@@ -51,3 +44,5 @@ include_once('gallery.php');
 </body>
 
 </html>
+
+?
